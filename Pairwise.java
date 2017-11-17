@@ -70,7 +70,7 @@ public class Pairwise{
 			}
 		}
 
-		return null;
+		return new boolean[0];
 	}
 
 	/*
