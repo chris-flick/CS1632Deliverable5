@@ -1,5 +1,5 @@
 import static org.junit.Assert.*;
-
+import java.util.*;
 import org.junit.*;
 
 public class PairwiseTest{
@@ -52,6 +52,43 @@ public class PairwiseTest{
 		String newString = Pairwise.truncateParameter("abababababababab");
 
 		assertEquals("ababababab", newString);
+	}
+
+	/*
+	*	 the row {0 0 0} has been added to final table.
+	*	Checking to see if we can find a pair of (0 0) between first param and third param
+	*/
+	@Test
+	public void testCheckFinalArray1(){
+		ArrayList<boolean []> finalTable = new ArrayList<boolean []>();
+		boolean [] row1 = {false, false, false};
+		finalTable.add(row1);
+
+		int param1 = 0;
+		int param2 = 2;
+		boolean [] rowToCheck = {false, false};
+
+		assertTrue(Pairwise.checkFinalArray(finalTable, param1, param2, rowToCheck));
+
+	}
+
+	/*
+	*	 the row {0 0 0} has been added to final table.
+	*	Checking to see if we can find a pair of (0 1) between first param and third param
+	*	Should return false
+	*/
+	@Test
+	public void testCheckFinalArray2(){
+		ArrayList<boolean []> finalTable = new ArrayList<boolean []>();
+		boolean [] row1 = {false, false, false};
+		finalTable.add(row1);
+
+		int param1 = 0;
+		int param2 = 2;
+		boolean [] rowToCheck = {false, true};
+
+		assertFalse(Pairwise.checkFinalArray(finalTable, param1, param2, rowToCheck));
+
 	}
 
 }
