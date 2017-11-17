@@ -12,19 +12,26 @@ public class Pairwise{
 		}
 	}
 
+
+	/*
+	*	checks to make sure at least two parameters were entered
+	*/
 	public static boolean checkInput(String args []){
 		if (args.length != 2){
-			System.out.println("Need to input at least two or more paramters!");
+			System.out.println("Need to input at least two or more parameters!");
 			return false;
 		}
 
 		return true;
 	}
 
+	/*
+	*	truncates the string if it is greater than 10 characters long
+	*/
 	public static String truncateParameter(String param){
 		if (param.length() <= 10)
 			return param;
 
-		return param.substring(0, 9);
+		return param.substring(0, 10);
 	}
 }
