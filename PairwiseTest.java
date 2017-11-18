@@ -1,16 +1,17 @@
 import static org.junit.Assert.*;
-import java.util.*;
+
 import org.junit.*;
 
-public class PairwiseTest{
+import java.util.*;
+
+public class PairwiseTest {
 
 	/*
 	*	Testing that true is returned when a list of two arguments is passed
 	*/
 	@Test
-	public void checkInputTest1(){
-		String args[] = {"one", "two"};
-
+	public void checkInputTest1() {
+		String[] args = {"one", "two"};
 		assertTrue(Pairwise.checkInput(args));
 	}
 
@@ -18,9 +19,8 @@ public class PairwiseTest{
 	*	Testing that false is returned when a list of one argument is passed
 	*/
 	@Test
-	public void checkInputTest2(){
-		String args[] = {"one"};
-
+	public void checkInputTest2() {
+		String[] args = {"one"};
 		assertFalse(Pairwise.checkInput(args));
 	}
 
@@ -28,7 +28,7 @@ public class PairwiseTest{
 	* Testing that string is returned when string length is less than 10
 	*/
 	@Test
-	public void truncateParametersTest1(){
+	public void truncateParametersTest1() {
 		String newString = Pairwise.truncateParameter("boo");
 
 		assertEquals("boo", newString);
@@ -38,7 +38,7 @@ public class PairwiseTest{
 	*	Testing that correct string is returned when string entered is 10 characters long
 	*/
 	@Test
-	public void truncateParametersTest2(){
+	public void truncateParametersTest2() {
 		String newString = Pairwise.truncateParameter("aaaaaaaaaa");
 
 		assertEquals("aaaaaaaaaa", newString);
@@ -48,7 +48,7 @@ public class PairwiseTest{
 	*	Testing that correct string is returned when string entered is 15 characters long
 	*/
 	@Test
-	public void truncateParametersTest3(){
+	public void truncateParametersTest3() {
 		String newString = Pairwise.truncateParameter("abababababababab");
 
 		assertEquals("ababababab", newString);
@@ -59,7 +59,7 @@ public class PairwiseTest{
 	*	Checking to see if we can find a pair of (0 0) between first param and third param
 	*/
 	@Test
-	public void testCheckFinalArray1(){
+	public void testCheckFinalArray1() {
 		ArrayList<boolean []> finalTable = new ArrayList<boolean []>();
 		boolean [] row1 = {false, false, false};
 		finalTable.add(row1);
@@ -78,7 +78,7 @@ public class PairwiseTest{
 	*	Should return false
 	*/
 	@Test
-	public void testCheckFinalArray2(){
+	public void testCheckFinalArray2() {
 		ArrayList<boolean []> finalTable = new ArrayList<boolean []>();
 		boolean [] row1 = {false, false, false};
 		finalTable.add(row1);
@@ -97,7 +97,7 @@ public class PairwiseTest{
 	*	Should return true
 	*/
 	@Test
-	public void testCheckFinalArray3(){
+	public void testCheckFinalArray3() {
 		ArrayList<boolean []> finalTable = new ArrayList<boolean []>();
 		boolean [] row1 = {false, false, false};
 		boolean [] row2 = {true, false, true};
@@ -118,7 +118,7 @@ public class PairwiseTest{
 	*	Should return true
 	*/
 	@Test
-	public void testCheckFinalArray4(){
+	public void testCheckFinalArray4() {
 		ArrayList<boolean []> finalTable = new ArrayList<boolean []>();
 		boolean [] row1 = {false, false, false};
 		boolean [] row2 = {true, false, true};
@@ -138,7 +138,7 @@ public class PairwiseTest{
 	*	Found row should be (0, 0, 0)
 	*/
 	@Test
-	public void testFindCoveringRow1(){
+	public void testFindCoveringRow1() {
 		boolean [][] tt = Pairwise.createTruthTable(8, 3);
 		int rows = 8;
 
@@ -158,7 +158,7 @@ public class PairwiseTest{
 	*	Found row should be (1, 0, 1)
 	*/
 	@Test
-	public void testFindCoveringRow2(){
+	public void testFindCoveringRow2() {
 		boolean [][] tt = Pairwise.createTruthTable(8, 3);
 		int rows = 8;
 
@@ -178,7 +178,7 @@ public class PairwiseTest{
 	*	Found row should be (0, 1, 1)
 	*/
 	@Test
-	public void testFindCoveringRow3(){
+	public void testFindCoveringRow3() {
 		boolean [][] tt = Pairwise.createTruthTable(8, 3);
 		int rows = 8;
 
